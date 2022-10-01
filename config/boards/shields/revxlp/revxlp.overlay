@@ -6,6 +6,8 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
+&xiao_serial { status = "disabled"; };
+
 &xiao_spi {
 	status = "okay";
 	cs-gpios = <&xiao_d 9 GPIO_ACTIVE_LOW>;
@@ -28,7 +30,7 @@
         zmk,backlight = &backlight;
     };
 
-	backlight: leds {
+	backlight: backlight_leds {
 		compatible = "gpio-leds";
 		led_mosfet {
 			gpios = <&xiao_d 7 GPIO_ACTIVE_HIGH>;
