@@ -5,9 +5,12 @@ manifest:
     - name: petejohanson
       url-base: https://github.com/petejohanson
   projects:
-    - name: zmk
-      remote: zmkfirmware
+    - name: revxlp-module
+      remote: petejohanson
       revision: main
+    - name: zmk
+      remote: petejohanson
+      revision: build/zephyr-module-keymap-loading-refactor
       import: app/west.yml
   self:
     path: config

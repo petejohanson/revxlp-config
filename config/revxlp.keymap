@@ -35,6 +35,13 @@
     combos {
         compatible = "zmk,combos";
 
+	lgui_combo {
+	    timeout-ms = <50>;
+            key-positions = <16 19>;
+            bindings = <&kp LGUI>;
+	    layers = <MED_L>;
+	};
+
 	l_curly_bracket {
 	    timeout-ms = <50>;
             key-positions = <2 14>;
