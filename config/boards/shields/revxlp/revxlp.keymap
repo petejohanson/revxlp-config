@@ -87,6 +87,12 @@
 	    layers = <MED_L>;
 	};
 
+	gui_combo {
+	    timeout-ms = <50>;
+            key-positions = <16 19>;
+            bindings = <&kp LGUI>;
+	    layers = <MED_L>;
+	};
     };
 
 
