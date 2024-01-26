@@ -17,7 +17,6 @@
 		gpio-controller;
 		spi-max-frequency = <200000>;
 		reg = <0>;
-		label = "4HC595";
 		#gpio-cells = <2>;
 		ngpios = <8>;
 	};
@@ -34,7 +33,6 @@
 		compatible = "gpio-leds";
 		led_mosfet {
 			gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
-			label = "Backlight LED 0";
 		};
 	};
 
@@ -53,7 +51,6 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(5,5) RC(5,4) RC(5,3) RC(5,2) 
 
 	kscan0: kscan_0 {
 		compatible = "zmk,kscan-gpio-matrix";
-		label = "KSCAN";
 		diode-direction = "col2row";
 		
 		col-gpios
