@@ -7,33 +7,19 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
-&xiao_serial { status = "disabled"; };
-
-&xiao_spi {
-	status = "okay";
-	cs-gpios = <&xiao_d 9 GPIO_ACTIVE_LOW>;
-	shifter: 595@0 {
-		compatible = "zmk,gpio-595";
-		status = "okay";
-		gpio-controller;
-		spi-max-frequency = <200000>;
-		reg = <0>;
-		#gpio-cells = <2>;
-		ngpios = <8>;
-	};
+&kscan {
+	/delete-property/ exit-after;
+	events = <>;
+	// events = <ZMK_MOCK_PRESS(0,0,10) ZMK_MOCK_RELEASE(0,0,10)>;
 };
+
+&uart1 { status = "okay"; };
+
 
 / {
 	chosen {
-		zmk,backlight = &backlight;
 		zmk,physical-layout = &twelve_u_layout;
-	};
-
-	backlight: backlight_leds {
-		compatible = "gpio-leds";
-		led_mosfet {
-			gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
-		};
+		zmk,studio-rpc-uart = &uart1;
 	};
 
 	twelve_u_transform: keymap_transform_12u {
@@ -64,36 +50,12 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(5,5) RC(5,4) RC(5,3) RC(5,2) 
 		>;
 	};
 
-	kscan0: kscan_0 {
-		compatible = "zmk,kscan-gpio-matrix";
-		diode-direction = "col2row";
-		
-		col-gpios
-			= <&shifter 7 GPIO_ACTIVE_HIGH>
-			, <&shifter 6 GPIO_ACTIVE_HIGH>
-			, <&shifter 5 GPIO_ACTIVE_HIGH>
-			, <&shifter 4 GPIO_ACTIVE_HIGH>
-			, <&shifter 3 GPIO_ACTIVE_HIGH>
-			, <&shifter 2 GPIO_ACTIVE_HIGH>
-			;
-		
-		row-gpios
-			= <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			;
-	};
-
 	ten_u_layout: ten_u_layout {
 		compatible = "zmk,physical-layout";
 		display-name = "10u";
 		
 		transform = <&ten_u_transform>;
-		kscan = <&kscan0>;
+		kscan = <&kscan>;
 		
 		keys
 			= <&key_physical_attrs 100 100 000  53 0 0 0>
@@ -143,7 +105,7 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(5,5) RC(5,4) RC(5,3) RC(5,2) 
 		display-name = "12u";
 		
 		transform = <&twelve_u_transform>;
-		kscan = <&kscan0>;
+		kscan = <&kscan>;
 		
 		keys
 			= <&key_physical_attrs 100 100 000  53 0 0 0>

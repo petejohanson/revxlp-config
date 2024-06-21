@@ -18,7 +18,7 @@
     tap_dances {
     	shifty: shift_caps_word {
 		compatible = "zmk,behavior-tap-dance";
-		friendly-name = "Shift+";
+		display-name = "Shift+";
 		#binding-cells = <0>;
 		tapping-term-ms = <150>;
 		bindings = <&kp LSHFT>, <&caps_word>;
@@ -31,6 +31,22 @@
 	    if-layers = <NUM_L NAV_L>;
 	    then-layer = <MED_L>;
         };
+    };
+
+    macros {
+	    ZMK_MACRO1(kp_mac,
+		    bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+		    )
+
+	    ZMK_MACRO1(lt_mac,
+		    bindings = <&macro_param_1to2 &mt LEFT_SHIFT MACRO_PLACEHOLDER>;
+		    )
+	    ZMK_MACRO2(lt_mac2,
+		    bindings = <&macro_param_1to1 &macro_param_2to2 &lt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
+		    )
+	    ZMK_MACRO2(lt_mac3,
+		    bindings = <&macro_param_1to1 &lt MACRO_PLACEHOLDER LEFT_SHIFT &macro_param_2to2 &bl BL_SET_CMD MACRO_PLACEHOLDER>;
+		    )
     };
 
     combos {
@@ -111,6 +127,7 @@
         };
 #else
         colemak_dhm_layer {
+		display-name = "Colemak";
             bindings = <
        &none        &kp Q      &kp W      &kp F       &kp P          &kp B         &kp J            &kp L          &kp U       &kp Y      &kp QUOT &none
        &none        &kp A      &kp R      &kp S       &kp T          &kp G         &kp M            &kp N          &kp E       &kp I      &kp O    &none
@@ -121,6 +138,7 @@
 #endif
 
         nav_layer {
+		display-name = "Nav";
             bindings = <
        &none         &trans     &trans     &trans      &trans          &trans       &kp GRAVE        &kp TAB        &kp GRAVE   &kp BKSP   &kp DEL &none
        &none         &sk LSHFT  &sk LALT   &sk LCTRL   &sk LGUI        &trans       &kp TAB          &kp LARW       &kp DARW    &kp UARW   &kp RARW &none
@@ -130,6 +148,7 @@
         };
 
         num_layer {
+		display-name = "Num";
             bindings = <
        &none         &kp ESC   &kp N7     &kp N8      &kp N9          &kp RBKT      &trans        &trans         &trans      &trans     &trans &none
        &none         &kp MINUS  &kp N4     &kp N5      &kp N6          &kp EQUAL     &trans        &sk LGUI       &sk LCTRL      &sk LALT     &sk LSHFT &none
@@ -139,6 +158,7 @@
         };
 
         media_layer {
+		display-name = "Media";
             bindings = <
        &bt BT_CLR    &trans     &trans     &trans      &trans          &trans       &trans           &kp C_PREV     &kp C_VOL_DN     &kp C_VOL_UP &kp C_NEXT &none
        &none         &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans           &trans       &trans &none
