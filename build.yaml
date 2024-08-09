@@ -1,19 +1,22 @@
 include:
   - board: seeeduino_xiao
     shield: revxlp
+    artifact-name: revxlp_xiao
   - board: seeeduino_xiao_ble
     shield: revxlp
+    artifact-name: revxlp_xiao_ble
   - board: seeeduino_xiao_rp2040
     shield: revxlp
+    artifact-name: revxlp_xiao_rp2040
   - board: seeeduino_xiao
     shield: revxlp
     snippet: studio-rpc-usb-uart
-    name: revxlp_xiao_studio
+    artifact-name: revxlp_xiao_studio
   - board: seeeduino_xiao_ble
     shield: revxlp
     snippet: studio-rpc-usb-uart
-    name: revxlp_xiao_ble_studio
+    artifact-name: revxlp_xiao_ble_studio
   - board: seeeduino_xiao_rp2040
     shield: revxlp
     snippet: studio-rpc-usb-uart
-    name: revxlp_xiao_rp2040_studio
+    artifact-name: revxlp_xiao_rp2040_studio
