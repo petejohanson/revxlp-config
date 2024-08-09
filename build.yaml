@@ -1,3 +1,19 @@
-board: [seeeduino_xiao, seeeduino_xiao_ble, seeeduino_xiao_rp2040]
-shield: [revxlp]
-
+include:
+  - board: seeeduino_xiao
+    shield: revxlp
+  - board: seeeduino_xiao_ble
+    shield: revxlp
+  - board: seeeduino_xiao_rp2040
+    shield: revxlp
+  - board: seeeduino_xiao
+    shield: revxlp
+    snippet: studio-rpc-usb-uart
+    name: revxlp_xiao_studio
+  - board: seeeduino_xiao_ble
+    shield: revxlp
+    snippet: studio-rpc-usb-uart
+    name: revxlp_xiao_ble_studio
+  - board: seeeduino_xiao_rp2040
+    shield: revxlp
+    snippet: studio-rpc-usb-uart
+    name: revxlp_xiao_rp2040_studio
