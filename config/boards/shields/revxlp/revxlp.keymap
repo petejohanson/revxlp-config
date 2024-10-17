@@ -102,6 +102,7 @@
 
 #ifdef QWERTY_BASE
         qwerty_layer {
+            display-name = "Base";
             bindings = <
        &none        &kp Q      &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I       &kp O      &kp P    &none
        &none        &kp A      &kp S      &kp D       &kp F          &kp G         &kp H            &kp J          &kp K       &kp L      &kp QUOT &none
@@ -111,7 +112,7 @@
         };
 #else
         colemak_dhm_layer {
-		display-name = "Colemak";
+            display-name = "Base";
             bindings = <
        &none        &kp Q      &kp W      &kp F       &kp P          &kp B         &kp J            &kp L          &kp U       &kp Y      &kp QUOT &none
        &none        &kp A      &kp R      &kp S       &kp T          &kp G         &kp M            &kp N          &kp E       &kp I      &kp O    &none
@@ -122,7 +123,7 @@
 #endif
 
         nav_layer {
-		display-name = "Nav";
+            display-name = "Nav";
             bindings = <
        &none         &trans     &trans     &trans      &trans          &trans       &kp GRAVE        &kp TAB        &kp GRAVE   &kp BKSP   &kp DEL &none
        &none         &sk LSHFT  &sk LALT   &sk LCTRL   &sk LGUI        &trans       &kp TAB          &kp LARW       &kp DARW    &kp UARW   &kp RARW &none
@@ -132,7 +133,7 @@
         };
 
         num_layer {
-		display-name = "Num";
+            display-name = "Num";
             bindings = <
        &none         &kp ESC   &kp N7     &kp N8      &kp N9          &kp RBKT      &trans        &trans         &trans      &trans     &trans &none
        &none         &kp MINUS  &kp N4     &kp N5      &kp N6          &kp EQUAL     &trans        &sk LGUI       &sk LCTRL      &sk LALT     &sk LSHFT &none
@@ -142,7 +143,7 @@
         };
 
         media_layer {
-		display-name = "Media";
+            display-name = "Media";
             bindings = <
        &bt BT_CLR    &trans     &trans     &trans      &trans          &trans       &trans           &kp C_PREV     &kp C_VOL_DN     &kp C_VOL_UP &kp C_NEXT &none
        &none         &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans           &trans       &trans &none
@@ -151,17 +152,19 @@
             >;
         };
 
-	res1 {
-		status = "reserved";
-		display-name = "New Layer";
-	};
-	res2 {
-		status = "reserved";
-		display-name = "New Layer";
-	};
-	res3 {
-		status = "reserved";
-		display-name = "New Layer";
-	};
+        res1 {
+            status = "reserved";
+            display-name = "New Layer";
+        };
+
+        res2 {
+            status = "reserved";
+            display-name = "New Layer";
+        };
+
+        res3 {
+            status = "reserved";
+            display-name = "New Layer";
+        };
     };
 };
