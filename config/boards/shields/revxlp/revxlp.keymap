@@ -151,9 +151,17 @@
             >;
         };
 
-	extra {
+	res1 {
 		status = "reserved";
-		display-name = "RES1";
+		display-name = "New Layer";
+	};
+	res2 {
+		status = "reserved";
+		display-name = "New Layer";
+	};
+	res3 {
+		status = "reserved";
+		display-name = "New Layer";
 	};
     };
 };
